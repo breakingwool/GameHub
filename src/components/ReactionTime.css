@@ -1,0 +1,156 @@
+/* ReactionTime.css */
+
+.reaction-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+.reaction-header {
+  text-align: center;
+}
+
+.reaction-header h2 {
+  font-size: 1.8rem;
+  margin: 0 0 0.8rem 0;
+}
+
+.reaction-stats {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.1rem;
+  color: #9ca3af;
+}
+
+.reaction-area {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.reaction-area.idle {
+  background: rgba(139, 92, 246, 0.2);
+  border: 2px solid rgba(139, 92, 246, 0.4);
+}
+
+.reaction-area.idle:hover {
+  background: rgba(139, 92, 246, 0.3);
+}
+
+.reaction-area.waiting {
+  background: rgba(239, 68, 68, 0.3);
+  border: 2px solid rgba(239, 68, 68, 0.5);
+}
+
+.reaction-area.ready {
+  background: rgba(16, 185, 129, 0.4);
+  border: 2px solid rgba(16, 185, 129, 0.6);
+  animation: readyPulse 0.5s ease infinite;
+}
+
+.reaction-area.clicked {
+  background: rgba(59, 130, 246, 0.2);
+  border: 2px solid rgba(59, 130, 246, 0.4);
+}
+
+@keyframes readyPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px 10px rgba(16, 185, 129, 0.4);
+  }
+}
+
+.reaction-message {
+  text-align: center;
+}
+
+.reaction-emoji {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.reaction-message p {
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+}
+
+.reaction-time-value {
+  font-size: 2.5rem !important;
+  font-weight: bold;
+  color: #10b981;
+}
+
+.reaction-rating {
+  font-size: 1.2rem !important;
+  font-weight: 600;
+}
+
+.reaction-retry {
+  font-size: 0.9rem !important;
+  color: #6b7280;
+  margin-top: 1rem !important;
+}
+
+.attempts-history {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.attempts-history h4 {
+  margin: 0 0 1rem 0;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.attempts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.attempt-bar {
+  height: 30px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 50px;
+}
+
+.attempt-bar.fast {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.attempt-bar.medium {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.attempt-bar.slow {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.reaction-hint {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0;
+}

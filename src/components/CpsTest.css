@@ -1,0 +1,204 @@
+/* CpsTest.css */
+
+.cps-test {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+.cps-header {
+  text-align: center;
+}
+
+.cps-header h2 {
+  font-size: 1.8rem;
+  margin: 0 0 0.8rem 0;
+}
+
+.cps-stats {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.1rem;
+  color: #9ca3af;
+}
+
+.cps-duration-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.duration-label {
+  font-size: 1rem;
+  color: #9ca3af;
+}
+
+.duration-btn {
+  padding: 0.4rem 1rem;
+  border: 2px solid rgba(139, 92, 246, 0.4);
+  border-radius: 8px;
+  background: rgba(139, 92, 246, 0.1);
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.duration-btn:hover:not(:disabled) {
+  background: rgba(139, 92, 246, 0.3);
+  border-color: rgba(139, 92, 246, 0.6);
+}
+
+.duration-btn.active {
+  background: rgba(139, 92, 246, 0.4);
+  border-color: #8b5cf6;
+  font-weight: bold;
+}
+
+.duration-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cps-area {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.cps-area.idle {
+  background: rgba(139, 92, 246, 0.2);
+  border: 2px solid rgba(139, 92, 246, 0.4);
+}
+
+.cps-area.idle:hover {
+  background: rgba(139, 92, 246, 0.3);
+}
+
+.cps-area.running {
+  background: rgba(59, 130, 246, 0.3);
+  border: 2px solid rgba(59, 130, 246, 0.5);
+  animation: runningPulse 0.3s ease infinite;
+}
+
+.cps-area.finished {
+  background: rgba(16, 185, 129, 0.2);
+  border: 2px solid rgba(16, 185, 129, 0.4);
+}
+
+@keyframes runningPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(59, 130, 246, 0.3);
+  }
+}
+
+.cps-message {
+  text-align: center;
+}
+
+.cps-emoji {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.cps-message p {
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+}
+
+.cps-hint {
+  font-size: 1rem !important;
+  color: #9ca3af;
+}
+
+.cps-click-count {
+  font-size: 2.5rem !important;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.cps-timer {
+  font-size: 1.5rem !important;
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.cps-result {
+  font-size: 2.5rem !important;
+  font-weight: bold;
+  color: #10b981;
+}
+
+.cps-rating {
+  font-size: 1.2rem !important;
+  font-weight: 600;
+}
+
+.cps-retry-btn {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cps-retry-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.cps-history {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.cps-history h3 {
+  font-size: 1.1rem;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+.cps-history-list {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cps-history-item {
+  padding: 0.3rem 0.8rem;
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #c4b5fd;
+}
+
+.cps-cooldown {
+  font-size: 1.1rem;
+  color: #f59e0b;
+  font-weight: 600;
+  animation: cooldownPulse 1s ease infinite;
+}
+
+@keyframes cooldownPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}

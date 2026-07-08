@@ -1,0 +1,113 @@
+/* TicTacToe.css */
+
+.tic-tac-toe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+.ttt-header {
+  text-align: center;
+}
+
+.ttt-header h2 {
+  font-size: 1.8rem;
+  margin: 0 0 0.8rem 0;
+}
+
+.ttt-scores {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1rem;
+  color: #9ca3af;
+}
+
+.player-score {
+  color: #3b82f6;
+}
+
+.ai-score {
+  color: #ef4444;
+}
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 16px;
+  border: 2px solid rgba(59, 130, 246, 0.2);
+}
+
+.ttt-cell {
+  width: 90px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ttt-cell:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.ttt-cell:disabled {
+  cursor: not-allowed;
+}
+
+.ttt-cell.winning {
+  background: rgba(59, 130, 246, 0.3);
+  border-color: #3b82f6;
+  animation: winPulse 0.6s ease infinite;
+}
+
+@keyframes winPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(59, 130, 246, 0.4);
+  }
+}
+
+.ttt-result {
+  text-align: center;
+  animation: popIn 0.4s ease;
+}
+
+.ttt-result h3 {
+  font-size: 1.8rem;
+  margin: 0 0 1rem 0;
+}
+
+.ttt-result button {
+  background: #3b82f6;
+  border: none;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ttt-result button:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+.ttt-hint {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0;
+}
